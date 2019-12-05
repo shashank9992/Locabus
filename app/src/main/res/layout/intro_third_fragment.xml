@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/inter_bus_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/intro3_label"
+            android:gravity="center"
+            style="@style/TextViewStyle"
+            android:textColor="@color/textColor_black"
+            android:textSize="22sp"
+            android:layout_marginTop="80dp"/>
+
+    <ImageView
+            android:id="@+id/bus_img"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/intro1_bg"
+            android:layout_marginTop="45dp"/>
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/desc_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/intro1_description"
+            android:gravity="center"
+            android:textColor="@color/textColor_black"
+            android:textSize="18sp"
+            style="@style/TextViewStyle"
+            android:layout_margin="30dp"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/lets_get_started"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rectangle_bg"
+            android:layout_margin="30dp"
+            android:padding="15dp"
+            style="@style/TextViewStyle"
+            android:text="@string/Lets_connect"
+            android:gravity="center"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp"/>
+
+
+</LinearLayout>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".screens.LoginWithEmailActivity">
+
+    <TextView
+            android:text="Welcome back !"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp"
+            style="@style/TextViewStyle"
+            android:id="@+id/textView3"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="44dp"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+            android:text="New Guest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:textSize="24sp"
+            style="@style/TextViewHeader"
+            android:id="@+id/user_name"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/textView3"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/user_email"
+            app:layout_constraintHorizontal_bias="0.498"/>
+
+    <TextView
+            android:text="xyz@gmail.com"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            style="@style/TextViewStyle"
+            android:textColor="@color/darkgrey"
+            android:id="@+id/user_email"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/user_name"/>
+
+    <TextView
+            android:text="Not You?"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorAccent"
+            android:textSize="16sp"
+            style="@style/TextViewStyle"
+            android:id="@+id/not_you"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/user_email"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintGuide_begin="16dp"
+            android:id="@+id/guideline2"/>
+    <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@+id/not_you"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            android:id="@+id/textInputLayout"
+            android:layout_marginStart="24dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password_edt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/EditTextStyle"
+                android:inputType="textPassword"
+                android:hint="Password"/>
+    </com.google.android.material.textfield.TextInputLayout>
+    <TextView
+            android:text="Login with OTP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/login_with_otp"
+            android:textColor="@color/colorAccent"
+            android:textSize="16sp"
+            style="@style/TextViewStyle"
+            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout"/>
+    <TextView
+            android:text="Login"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/login_button"
+            android:layout_marginTop="64dp"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="16dp"
+            android:gravity="center"
+            style="@style/TextViewStyle"
+            android:background="@drawable/rounded_blue"
+            android:textColor="@color/white"
+            android:padding="8dp"
+            android:textSize="18sp"/>
+
+    <TextView
+            android:text="Forgot Password?"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/forgot_password"
+            android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@+id/login_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp"
+            android:textColor="@color/colorAccent"
+            style="@style/TextViewStyle"
+            android:textSize="16sp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

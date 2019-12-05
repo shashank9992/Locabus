@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#03234E</color>
+
+    <color name="colorPrimaryDark">#03234E</color>
+
+    <color name="colorAccent">#006FFF</color>
+
+    <color name="faceBookBlue">#385C8E</color>
+    <color name="white">#FDFDFD</color>
+    <color name="transparentwhite">#A1FDFDFD</color>
+    <color name="grey">#606C7E</color>
+    <color name="darkgrey">#606C7E</color>
+    <color name="textColor_black">#222222</color>
+
+
+</resources>

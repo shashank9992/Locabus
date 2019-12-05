@@ -1,0 +1,2 @@
+include ':app' ,':libraries:viewpagerdotsindicator'
+rootProject.name='LocaBus'

@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">LocaApp</string>
+    <string name="choose_language">choose_language</string>
+    <string name="activity_login_slang">activity_login_slang</string>
+    <string name="activity_login_normal">activity_login_normal</string>
+    <string name="intro_first_fragment">intro_first_fragment</string>
+    <string name="intro_second_fragment">intro_second_fragment</string>
+    <string name="intro_third_fragment">intro_third_fragment</string>
+    <string name="welcom_mili">Hi, I am Mili! \nWelcome to LocaBus</string>
+    <string name="to_choose_press_the_voice_command_button_and_say_your_preferd_language">To choose press the <b>Voice
+        command Button
+    </b> and say your preferd language
+    </string>
+    <string name="eg_say_hindi_for_hindi_english_for_english">eg. say <b>Hindi</b> for Hindi ,<b>English</b> for English
+    </string>
+    <string name="say_siginup_with_google_to_sigin_up_with_google_or_just_type_your_mobile_number_email_id_to_signup">
+        <b>Say Siginup with Google</b>
+        to sigin up with Google or just type your mobile number / Email ID to Signup
+    </string>
+
+    <string name="intro1_label">Intercity Bus Services</string>
+    <string name="intro2_label">Voice Enabled Search</string>
+    <string name="intro3_label">Local Bus Ticketing &amp; Pass Services</string>
+    <string name="intro1_description">Intercity Bus Services book ticket for outstation using one click services
+    </string>
+    <string name="Skip_Login">Skip To Login</string>
+    <string name="Lets_connect">Lets Get Connected</string>
+    <string name="Continue_guest">Continue as guest</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="title_home">Home</string>
+    <string name="pass_history">Pass History</string>
+    <string name="title_profile">My Accounts</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="hi_their">Hi there ! \nWhere will you like to travel</string>
+
+
+</resources>
