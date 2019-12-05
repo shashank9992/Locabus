@@ -35,9 +35,9 @@ class LoginNormalActivity : AppCompatActivity() {
         }
 
         as_guest.setOnClickListener {
-            val snackbar = Snackbar
-                .make(container_login, "Function Yet to Implement..", Snackbar.LENGTH_LONG)
-            snackbar.show()
+            startActivity(Intent(this@LoginNormalActivity, DashBoard::class.java))
+            overridePendingTransition(R.anim.enter, R.anim.exit)
+            finish()
         }
     }
 

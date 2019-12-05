@@ -10,12 +10,17 @@
 
     <style name="TextViewStyle" parent="Widget.AppCompat.TextView">
         <item name="android:fontFamily">@font/brandon_reg</item>
-        <item name="android:textSize">16sp</item>
     </style>
 
     <style name="TabLayoutTextStyle" >
         <item name="android:fontFamily">@font/brandon_reg</item>
-        <item name="android:textSize">24sp</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="TabLayoutTextStyleHeader" >
+        <item name="android:fontFamily">@font/brandon_med</item>
+        <item name="android:textSize">28sp</item>
         <item name="android:textAllCaps">false</item>
     </style>
 

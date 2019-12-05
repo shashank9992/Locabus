@@ -129,7 +129,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
             android:background="@drawable/border_black"
-            android:layout_height="wrap_content" android:layout_marginTop="20dp"
+            android:layout_height="wrap_content" android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout3" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="16dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="16dp"
             app:layout_constraintHorizontal_bias="1.0" android:id="@+id/constraintLayout4">
@@ -137,7 +137,7 @@
 
         <com.google.android.material.tabs.TabLayout
                 android:layout_width="165dp"
-                android:layout_height="wrap_content"
+                android:layout_height="49dp"
                 app:tabTextColor="@drawable/tab_text_color"
                 style="@style/TextViewStyle"
                 app:tabSelectedTextColor="@color/colorAccent"
@@ -148,7 +148,8 @@
                 android:layout_marginStart="8dp"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="8dp" android:id="@+id/tabLayout3">
+                android:layout_marginEnd="8dp"
+                android:id="@+id/tabLayout3">
 
             <com.google.android.material.tabs.TabItem
                     android:layout_width="match_parent"
@@ -163,8 +164,8 @@
         </com.google.android.material.tabs.TabLayout>
         <ImageView
                 android:src="@drawable/ic_calendar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:id="@+id/imageView7"
                 app:layout_constraintBottom_toBottomOf="@+id/today_lyaout"
                 app:layout_constraintEnd_toStartOf="@+id/today_lyaout" android:layout_marginEnd="8dp"
@@ -177,13 +178,13 @@
                 app:layout_constraintTop_toBottomOf="@+id/tabLayout3"
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toStartOf="@+id/guideline5"
-                android:layout_marginEnd="24dp">
+                android:layout_marginEnd="8dp" android:layout_marginTop="8dp">
 
             <TextView
 
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="30sp"
+                    android:textSize="24sp"
                     android:id="@+id/tv_date"
                     android:textColor="#000000"
                     style="@style/TextViewHeader"/>
@@ -196,17 +197,15 @@
 
                 <TextView
                         android:id="@+id/tv_day"
-
                         android:layout_marginStart="5dp"
                         android:layout_marginEnd="5dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="-3dp"
                         style="@style/TextViewStyle"
-                        android:textSize="12sp"
+                        android:textSize="10sp"
                 />
                 <TextView
-
                         android:layout_marginStart="5dp"
                         android:layout_marginEnd="5dp"
                         android:layout_marginTop="-3dp"
@@ -214,17 +213,15 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/tv_month"
                         style="@style/TextViewStyle"
-                        android:textSize="14sp"/>
-
+                        android:textSize="12sp"/>
 
 
             </LinearLayout>
 
         </LinearLayout>
         <TextView
-                android:paddingStart="6dp"
-                android:paddingEnd="6dp"
-                android:layout_margin="4dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="@dimen/nav_header_vertical_spacing"
                 android:text="Today"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -232,9 +229,9 @@
                 android:textColor="@color/colorAccent"
                 android:background="@drawable/border_blue"
                 android:id="@+id/textView11"
-                app:layout_constraintStart_toStartOf="@+id/guideline5"
-                app:layout_constraintTop_toBottomOf="@+id/tabLayout3"
-                android:layout_marginTop="16dp"/>
+                app:layout_constraintTop_toBottomOf="@+id/tabLayout3" android:layout_marginStart="16dp"
+                app:layout_constraintStart_toStartOf="@+id/guideline5" android:layout_marginTop="12dp"
+                android:textSize="16sp" android:paddingBottom="2dp" android:paddingTop="2dp"/>
         <androidx.constraintlayout.widget.Guideline
                 android:orientation="vertical"
                 android:layout_width="wrap_content"
@@ -242,8 +239,8 @@
                 app:layout_constraintGuide_percent="0.5"
                 android:id="@+id/guideline5"/>
         <TextView
-                android:paddingStart="6dp"
-                android:paddingEnd="6dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
                 android:layout_margin="4dp"
                 android:text="Tomorrow"
                 android:layout_width="wrap_content"
@@ -252,8 +249,10 @@
                 android:background="@drawable/border_black"
                 android:id="@+id/textView12"
                 app:layout_constraintStart_toEndOf="@+id/textView11"
-                app:layout_constraintBottom_toBottomOf="@+id/textView11"
-                app:layout_constraintTop_toTopOf="@+id/textView11"/>
+                android:layout_marginStart="8dp"
+                app:layout_constraintTop_toTopOf="@+id/textView11"
+                app:layout_constraintBottom_toBottomOf="@+id/textView11" android:paddingBottom="2dp"
+                android:paddingTop="2dp" android:textSize="16sp"/>
 
         <LinearLayout
                 android:layout_width="0dp"

@@ -83,7 +83,7 @@ class OutstationFragment : Fragment() {
         val c:Calendar  = Calendar.getInstance()
         rootView?.let {
             it.tv_month.setText(Helper.formatDateToString(c.time, "MMM yyyy"))
-            it.tv_day.setText(Helper.formatDateToString(c.time, "EEE"))
+            it.tv_day.setText(Helper.formatDateToString(c.time, "EEEE"))
             it.tv_date.setText(Helper.formatDateToString(c.time, "dd"))
         }
 

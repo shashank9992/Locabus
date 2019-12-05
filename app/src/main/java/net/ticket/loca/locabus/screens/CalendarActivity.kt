@@ -1,14 +1,15 @@
 package net.ticket.loca.locabus.screens
 
+import android.app.Activity
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import kotlinx.android.synthetic.main.activity_calendar.*
 import net.ticket.loca.locabus.R
 import net.ticket.loca.locabus.helpers.Helper
 import java.util.*
-import android.widget.Toast
-
-
+import java.text.SimpleDateFormat
 
 
 class CalendarActivity : AppCompatActivity() {
@@ -25,7 +26,7 @@ class CalendarActivity : AppCompatActivity() {
         val c: Calendar = Calendar.getInstance()
 
         Month = Helper.formatDateToString(c.time, "MMM yyyy")
-        Day = Helper.formatDateToString(c.time, "EEE")
+        Day = Helper.formatDateToString(c.time, "EEEE")
         Date = Helper.formatDateToString(c.time, "dd")
         format_date = Helper.formatDateToString(c.time, "yyyy-MM-dd")
         first_format_date = Helper.formatDateToString(c.time, "yyyy-MM-dd")
@@ -38,7 +39,7 @@ class CalendarActivity : AppCompatActivity() {
         c.add(Calendar.DATE, 1);
 //setting second date view
         second_month_tv.setText(Helper.formatDateToString(c.time, "MMM yyyy"))
-        second_day_tv.setText(Helper.formatDateToString(c.time, "EEE"))
+        second_day_tv.setText(Helper.formatDateToString(c.time, "EEEE"))
         second_date_tv.setText(Helper.formatDateToString(c.time, "dd"))
         second_format_date = Helper.formatDateToString(c.time, "yyyy-MM-dd")
 
@@ -48,16 +49,30 @@ class CalendarActivity : AppCompatActivity() {
         tomorrow_lyaout.setOnClickListener {
             onLayoutDateLayoutSelect(false, true)
         }
+        send_date_btn.setOnClickListener {
+            val act = Intent(this@CalendarActivity, DashBoard::class.java)
+            act.putExtra("Date", Date)
+            act.putExtra("Month", Month)
+            act.putExtra("Day", Day)
+            act.putExtra("format_date", format_date)
+            setResult(Activity.RESULT_OK, act)
+            finish()
+        }
+        iv_back.setOnClickListener { onBackPressed() }
 
-        calendarView.setOnDateChangeListener({ view, year, month, dayOfMonth ->
-            val dt:Date =  Date(calendarView.getDate())
-            Month = Helper.formatDateToString(dt, "MMM yyyy")
-            Day = Helper.formatDateToString(dt, "EEE")
-            Date = Helper.formatDateToString(dt, "dd")
-            format_date = Helper.formatDateToString(dt, "yyyy-MM-dd")
+        calendarView.setOnDateChangeListener { view, year, month, dayOfMonth ->
+            val calander = Calendar.getInstance()
+
+            calander.set(Calendar.YEAR, year)
+            calander.set(Calendar.MONTH, month)
+            calander.set(Calendar.DAY_OF_MONTH, dayOfMonth)
+            Month = Helper.formatDateToString(calander.time, "MMM yyyy")
+            Day = Helper.formatDateToString(calander.time, "EEEE")
+            Date = Helper.formatDateToString(calander.time, "dd")
+            format_date = Helper.formatDateToString(calander.time, "yyyy-MM-dd")
 
             onLayoutDateLayoutSelect(false, false)
-        })
+        }
 
     }
 
@@ -83,7 +98,7 @@ class CalendarActivity : AppCompatActivity() {
             first_day_tv.setTextColor(resources.getColor(R.color.white))
             first_date_tv.setTextColor(resources.getColor(R.color.white))
 
-        } else if(second){
+        } else if (second) {
             Month = second_month_tv.text.toString()
             Day = second_day_tv.text.toString()
             Date = second_date_tv.text.toString()
