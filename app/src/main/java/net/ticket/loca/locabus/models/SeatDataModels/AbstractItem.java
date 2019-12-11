@@ -28,10 +28,10 @@ public class AbstractItem implements Parcelable {
         MaxAllowedSeats = in.readString();
         ProvId = in.readString();
         ChartCode = in.readString();
-        AvailSeats = in.readParcelable(AvailSeats.class.getClassLoader());
-        ChartSeats = in.readParcelable(ChartSeats.class.getClassLoader());
-        ChartLayout = in.readParcelable(ChartLayout.class.getClassLoader());
-        SeatsStatus = in.readParcelable(SeatsStatus.class.getClassLoader());
+        AvailSeats = in.readParcelable(net.ticket.loca.locabus.models.SeatDataModels.AvailSeats.class.getClassLoader());
+        ChartSeats = in.readParcelable(net.ticket.loca.locabus.models.SeatDataModels.ChartSeats.class.getClassLoader());
+        ChartLayout = in.readParcelable(net.ticket.loca.locabus.models.SeatDataModels.ChartLayout.class.getClassLoader());
+        SeatsStatus = in.readParcelable(net.ticket.loca.locabus.models.SeatDataModels.SeatsStatus.class.getClassLoader());
         Pickups = in.createTypedArrayList(net.ticket.loca.locabus.models.SeatDataModels.Pickups.CREATOR);
         Dropoffs = in.createTypedArrayList(net.ticket.loca.locabus.models.SeatDataModels.Dropoffs.CREATOR);
         Canc = in.createTypedArrayList(net.ticket.loca.locabus.models.SeatDataModels.Canc.CREATOR);

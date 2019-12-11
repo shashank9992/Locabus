@@ -17,6 +17,8 @@ public class BusStatus implements Parcelable {
         Availability = in.readInt();
         RouteBusId = in.readInt();
         TotalTax = in.readInt();
+        BaseFares = new ArrayList<>();
+        in.readList(BaseFares, ArrayList.class.getClassLoader());
     }
 
     @Override
@@ -24,6 +26,7 @@ public class BusStatus implements Parcelable {
         dest.writeInt(Availability);
         dest.writeInt(RouteBusId);
         dest.writeInt(TotalTax);
+        dest.writeList(BaseFares);
     }
 
     @Override

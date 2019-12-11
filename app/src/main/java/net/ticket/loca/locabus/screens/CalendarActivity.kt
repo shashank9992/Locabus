@@ -14,9 +14,6 @@ import java.text.SimpleDateFormat
 
 class CalendarActivity : AppCompatActivity() {
 
-    var Date: String? = null
-    var Month: String? = null
-    var Day: String? = null
     var format_date: String? = null
     var first_format_date: String? = null
     var second_format_date: String? = null
@@ -25,16 +22,13 @@ class CalendarActivity : AppCompatActivity() {
         setContentView(R.layout.activity_calendar)
         val c: Calendar = Calendar.getInstance()
 
-        Month = Helper.formatDateToString(c.time, "MMM yyyy")
-        Day = Helper.formatDateToString(c.time, "EEEE")
-        Date = Helper.formatDateToString(c.time, "dd")
-        format_date = Helper.formatDateToString(c.time, "yyyy-MM-dd")
+        format_date = Helper.formatDateToString(c.time, "dd-MM-yyyy")
         first_format_date = Helper.formatDateToString(c.time, "yyyy-MM-dd")
 
         //setting first date view
-        first_month_tv.setText(Month)
-        first_day_tv.setText(Day)
-        first_date_tv.setText(Date)
+        first_month_tv.setText(Helper.formatDateToString(c.time, "MMM yyyy"))
+        first_day_tv.setText(Helper.formatDateToString(c.time, "EEEE"))
+        first_date_tv.setText(Helper.formatDateToString(c.time, "dd"))
 
         c.add(Calendar.DATE, 1);
 //setting second date view
@@ -51,9 +45,6 @@ class CalendarActivity : AppCompatActivity() {
         }
         send_date_btn.setOnClickListener {
             val act = Intent(this@CalendarActivity, DashBoard::class.java)
-            act.putExtra("Date", Date)
-            act.putExtra("Month", Month)
-            act.putExtra("Day", Day)
             act.putExtra("format_date", format_date)
             setResult(Activity.RESULT_OK, act)
             finish()
@@ -66,9 +57,6 @@ class CalendarActivity : AppCompatActivity() {
             calander.set(Calendar.YEAR, year)
             calander.set(Calendar.MONTH, month)
             calander.set(Calendar.DAY_OF_MONTH, dayOfMonth)
-            Month = Helper.formatDateToString(calander.time, "MMM yyyy")
-            Day = Helper.formatDateToString(calander.time, "EEEE")
-            Date = Helper.formatDateToString(calander.time, "dd")
             format_date = Helper.formatDateToString(calander.time, "yyyy-MM-dd")
 
             onLayoutDateLayoutSelect(false, false)
@@ -78,6 +66,7 @@ class CalendarActivity : AppCompatActivity() {
 
     fun onLayoutDateLayoutSelect(first: Boolean, second: Boolean) {
         //setting colors
+        val calendar = GregorianCalendar()
         today_lyaout.setBackgroundResource(R.drawable.border_black)
         first_month_tv.setTextColor(resources.getColor(R.color.grey))
         first_day_tv.setTextColor(resources.getColor(R.color.grey))
@@ -88,10 +77,8 @@ class CalendarActivity : AppCompatActivity() {
         second_day_tv.setTextColor(resources.getColor(R.color.grey))
         second_date_tv.setTextColor(resources.getColor(R.color.grey))
         if (first) {
-            Month = first_month_tv.text.toString()
-            Day = first_day_tv.text.toString()
-            Date = first_date_tv.text.toString()
             format_date = first_format_date
+            calendarView.date = calendar.time.time
             //setting colors
             today_lyaout.setBackgroundResource(R.drawable.rounded_blue)
             first_month_tv.setTextColor(resources.getColor(R.color.white))
@@ -99,10 +86,9 @@ class CalendarActivity : AppCompatActivity() {
             first_date_tv.setTextColor(resources.getColor(R.color.white))
 
         } else if (second) {
-            Month = second_month_tv.text.toString()
-            Day = second_day_tv.text.toString()
-            Date = second_date_tv.text.toString()
             format_date = second_format_date
+            calendar.add(Calendar.DATE,1)
+            calendarView.date = calendar.time.time
             //setting colors
             tomorrow_lyaout.setBackgroundResource(R.drawable.rounded_blue)
             second_month_tv.setTextColor(resources.getColor(R.color.white))

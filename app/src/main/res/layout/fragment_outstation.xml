@@ -96,7 +96,7 @@
                 android:layout_marginEnd="28dp"
                 app:layout_constraintEnd_toEndOf="@+id/view"
                 app:layout_constraintTop_toBottomOf="@+id/from_city"
-                android:id="@+id/textView7" android:layout_marginTop="4dp"/>
+                android:id="@+id/swipe_iv" android:layout_marginTop="4dp"/>
 
         <EditText
                 android:layout_width="0dp"
@@ -110,7 +110,7 @@
                 android:focusable="false"
                 android:layout_marginEnd="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView7"
+                app:layout_constraintTop_toBottomOf="@+id/swipe_iv"
                 android:layout_marginBottom="16dp" app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageView6" android:layout_marginStart="8dp"
                 style="@style/EditTextStyle"/>
@@ -149,7 +149,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginEnd="8dp"
-                android:id="@+id/tabLayout3">
+                android:id="@+id/tabLayout">
 
             <com.google.android.material.tabs.TabItem
                     android:layout_width="match_parent"
@@ -175,7 +175,7 @@
                 android:id="@+id/today_lyaout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@+id/tabLayout3"
+                app:layout_constraintTop_toBottomOf="@+id/tabLayout"
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toStartOf="@+id/guideline5"
                 android:layout_marginEnd="8dp" android:layout_marginTop="8dp">
@@ -228,10 +228,13 @@
                 style="@style/TextViewStyle"
                 android:textColor="@color/colorAccent"
                 android:background="@drawable/border_blue"
-                android:id="@+id/textView11"
-                app:layout_constraintTop_toBottomOf="@+id/tabLayout3" android:layout_marginStart="16dp"
-                app:layout_constraintStart_toStartOf="@+id/guideline5" android:layout_marginTop="12dp"
-                android:textSize="16sp" android:paddingBottom="2dp" android:paddingTop="2dp"/>
+                android:id="@+id/today_tv"
+                app:layout_constraintTop_toBottomOf="@+id/tabLayout"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toStartOf="@+id/guideline5"
+                android:layout_marginTop="12dp"
+                android:textSize="16sp" android:paddingBottom="2dp"
+                android:paddingTop="2dp"/>
         <androidx.constraintlayout.widget.Guideline
                 android:orientation="vertical"
                 android:layout_width="wrap_content"
@@ -247,11 +250,11 @@
                 android:layout_height="wrap_content"
                 style="@style/TextViewStyle"
                 android:background="@drawable/border_black"
-                android:id="@+id/textView12"
-                app:layout_constraintStart_toEndOf="@+id/textView11"
+                android:id="@+id/tomorrow_tv"
+                app:layout_constraintStart_toEndOf="@+id/today_tv"
                 android:layout_marginStart="8dp"
-                app:layout_constraintTop_toTopOf="@+id/textView11"
-                app:layout_constraintBottom_toBottomOf="@+id/textView11" android:paddingBottom="2dp"
+                app:layout_constraintTop_toTopOf="@+id/today_tv"
+                app:layout_constraintBottom_toBottomOf="@+id/today_tv" android:paddingBottom="2dp"
                 android:paddingTop="2dp" android:textSize="16sp"/>
 
         <LinearLayout
@@ -271,15 +274,18 @@
                     android:paddingTop="4dp"
                     android:paddingBottom="4dp"
                     android:gravity="center"
-                    android:background="@drawable/border_blue"
+                    android:id="@+id/layout_ac"
+                    android:background="@drawable/border_black"
                     android:orientation="vertical"
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:layout_height="wrap_content">
+                    android:layout_height="match_parent">
                 <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:src="@drawable/ic_ac"
+                        android:id="@+id/iv_ic_ac"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_ac_inactive"
+                        android:layout_margin="5dp"
                         android:layout_alignParentStart="true"
                 />
 
@@ -301,14 +307,16 @@
                     android:gravity="center"
                     android:background="@drawable/border_black"
                     android:orientation="vertical"
+                    android:id="@+id/layout_non_ac"
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:layout_height="wrap_content">
+                    android:layout_height="match_parent">
                 <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:src="@drawable/ic_non_ac"
-
+                        android:id="@+id/iv_ic_nonac"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_non_ac_inactive"
+                        android:layout_margin="5dp"
                         android:layout_alignParentStart="true"
                 />
 
@@ -330,14 +338,17 @@
                     android:gravity="center"
                     android:background="@drawable/border_black"
                     android:orientation="vertical"
+                    android:id="@+id/layout_sleeper"
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:layout_height="wrap_content">
+                    android:layout_height="match_parent">
                 <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:src="@drawable/ic_sleeper"
+                        android:id="@+id/iv_ic_sleeper"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_sleeper_inactive"
                         android:layout_alignParentStart="true"
+                        android:layout_margin="5dp"
                 />
 
 
@@ -356,16 +367,19 @@
                     android:paddingTop="4dp"
                     android:paddingBottom="4dp"
                     android:gravity="center"
+                    android:id="@+id/layout_seater"
                     android:background="@drawable/border_black"
                     android:orientation="vertical"
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:layout_height="wrap_content">
+                    android:layout_height="match_parent">
                 <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:src="@drawable/ic_seater"
+                        android:id="@+id/iv_ic_seater"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_seater_inactive"
                         android:layout_alignParentStart="true"
+                        android:layout_margin="5dp"
                 />
 
 
@@ -400,11 +414,26 @@
             android:textColor="@color/white"
             style="@style/TextViewStyle"
             android:gravity="center"
-            android:id="@+id/textView13"
+            android:id="@+id/inter_btn_search"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout4" android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="@+id/imageView8" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="64dp" android:layout_marginEnd="64dp"
             app:layout_constraintEnd_toEndOf="parent"/>
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:id="@+id/progress_layout"
+            android:visibility="gone"
+            android:background="@color/transparentwhite"
+            android:layout_height="match_parent" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent">
 
+        <ProgressBar
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,6 +8,7 @@ public class Lower implements Parcelable {
     private int MaxRows;
     private int MaxCols;
 
+
     protected Lower(Parcel in) {
         MaxRows = in.readInt();
         MaxCols = in.readInt();

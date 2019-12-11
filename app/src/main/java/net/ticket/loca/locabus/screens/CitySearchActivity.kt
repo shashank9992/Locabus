@@ -57,6 +57,10 @@ class CitySearchActivity : AppCompatActivity() {
         iv_back.setOnClickListener { onBackPressed() }
 
         selected_stop = intent.getStringExtra("Stop")
+
+        if(access_token.isNullOrEmpty()){
+            _accessToken()
+        }
         _GetCityList()
 
 

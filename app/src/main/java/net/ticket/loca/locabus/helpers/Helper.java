@@ -22,6 +22,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.TimeZone;
 
 public class Helper {
@@ -90,10 +91,21 @@ public class Helper {
         imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 
-    public static String getDate(){
+    public static String getTodaysDate(){
 
         String time;
         Calendar c = Calendar.getInstance();
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+        time=df.format(c.getTime());
+
+        return time;
+    }
+
+    public static String getTomorrowaDate(){
+
+        String time;
+        Calendar c = Calendar.getInstance();
+        c.add(Calendar.DATE,1);
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
         time=df.format(c.getTime());
 
@@ -129,6 +141,11 @@ public class Helper {
         String date = format.format(newDate);
 
         return date;
+    }
+
+    public static Date formatStringToDate(String m_date, String type) throws ParseException {
+        SimpleDateFormat format = new SimpleDateFormat(type);
+        return format.parse(m_date);
     }
 
     public static String convertDateTime(String fromFormat, String toFormat, String dateOriginalGot) {

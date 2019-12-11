@@ -12,13 +12,23 @@ public class SeatsStatus implements Parcelable {
     private ArrayList<Integer> UniqFares;
     private String profiler;
 
+
     protected SeatsStatus(Parcel in) {
         profiler = in.readString();
+        Status = new ArrayList<>();
+        in.readList(Status, ArrayList.class.getClassLoader());
+        Fares = new ArrayList<>();
+        in.readList(Fares, ArrayList.class.getClassLoader());
+        UniqFares = new ArrayList<>();
+        in.readList(UniqFares, ArrayList.class.getClassLoader());
     }
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(profiler);
+        dest.writeList(Status);
+        dest.writeList(Fares);
+        dest.writeList(UniqFares);
     }
 
     @Override
