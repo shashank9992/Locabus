@@ -31,14 +31,13 @@ class InterCityBusFragment : Fragment(), BusListFragment.OnBusFragInteractionLis
     var to_id: Int? = null
     var from_id: Int? = null
     var j_date: String? = null
-    var transaction: FragmentTransaction? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
         rootView = inflater.inflate(R.layout.fragment_inter_city_bus, container, false)
 
-        transaction = childFragmentManager.beginTransaction()
+
         rootView?.let {
             it.tabLayout.setTabWidthAsWrapContent(0)
             it.tabLayout.setTabWidthAsWrapContent(1)
@@ -90,11 +89,14 @@ class InterCityBusFragment : Fragment(), BusListFragment.OnBusFragInteractionLis
 
     private fun showBusResults() {
         if (to_id != null && from_id != null) {
-            transaction?.let {
-                it.add(R.id.contentContainer, BusListFragment.newInstance(this, to_id, from_id, j_date))
-                it.addToBackStack("fragment")
-                it.commit()
+            val count = childFragmentManager.getBackStackEntryCount()
+            for (i in 0 until count) {
+                childFragmentManager.popBackStack()
             }
+            val  transaction = childFragmentManager.beginTransaction()
+            transaction.replace(R.id.contentContainer, BusListFragment.newInstance(this, to_id, from_id, j_date))
+            transaction.addToBackStack("fragment")
+            transaction.commit()
         }
     }
 
@@ -121,19 +123,18 @@ class InterCityBusFragment : Fragment(), BusListFragment.OnBusFragInteractionLis
     }
 
     override fun onBusItemClick(bus_id: String?) {
-        transaction?.let {
-            it.replace(R.id.contentContainer, SeatLayoutFragment.newInstance(this, to_id, from_id, j_date,bus_id))
-            it.addToBackStack("fragment")
-            it.commit()
-        }
+        val  transaction = childFragmentManager.beginTransaction()
+        transaction.replace(R.id.contentContainer, SeatLayoutFragment.newInstance(this, to_id, from_id, j_date,bus_id))
+        transaction.addToBackStack("fragment")
+        transaction.commit()
+
     }
 
     override fun onSeatSubmitItemClick(bus_id: String?) {
-        transaction?.let {
-            it.replace(R.id.contentContainer, BoardingFragment.newInstance(this))
-            it.addToBackStack("fragment")
-            it.commit()
-        }
+        val  transaction = childFragmentManager.beginTransaction()
+        transaction.replace(R.id.contentContainer, BoardingFragment.newInstance(this))
+        transaction.addToBackStack("fragment")
+        transaction.commit()
     }
 
     override fun onBoardingpointSelect(uri: Uri) {

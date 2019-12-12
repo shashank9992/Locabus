@@ -73,6 +73,7 @@ class BusListFragment : Fragment() {
                     rootView?.show_more?.visibility = View.GONE
                     rootView?.bus_list?.visibility = View.VISIBLE
                 }else{
+                    Toast.makeText(activity, "No Bus Found.", Toast.LENGTH_SHORT).show()
                     rootView?.show_more?.visibility = View.VISIBLE
                     rootView?.bus_list?.visibility = View.GONE
                 }
