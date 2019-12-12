@@ -8,10 +8,9 @@ import android.view.ViewGroup
 import kotlinx.android.synthetic.main.fragment_home.view.*
 
 import net.ticket.loca.locabus.R
-import net.ticket.loca.locabus.adapters.IntroPagerAdapter
 import net.ticket.loca.locabus.adapters.TabAdapter
+import net.ticket.loca.locabus.fragments.home_fragments.InterCityBusFragment
 import net.ticket.loca.locabus.fragments.home_fragments.LocalStationFragment
-import net.ticket.loca.locabus.fragments.home_fragments.OutstationFragment
 
 
 class HomeFragment : Fragment() {
@@ -27,7 +26,8 @@ class HomeFragment : Fragment() {
         rootView = inflater.inflate(R.layout.fragment_home, container, false)
 
         val adapter = TabAdapter(childFragmentManager)
-        adapter.addFragment(OutstationFragment(),"OutStation Services")
+
+        adapter.addFragment(InterCityBusFragment(),"Intercity Bus")
         adapter.addFragment(LocalStationFragment(),"Local Bus Service")
 
         rootView?.let {

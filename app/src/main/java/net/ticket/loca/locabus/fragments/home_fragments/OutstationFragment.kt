@@ -49,11 +49,9 @@ class OutstationFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+        savedInstanceState: Bundle?): View? {
 
         rootView = inflater.inflate(R.layout.fragment_outstation, container, false)
-
 
         // Inflate the layout for this fragment
         rootView?.let {

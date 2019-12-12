@@ -61,11 +61,9 @@ class DashBoard : AppCompatActivity() {
         setLocale(sessionManager.appLocale)
         setContentView(R.layout.activity_dash_board)
 
-
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
 
         navView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
-
 
        // sessionManager.checkLogin()
 
