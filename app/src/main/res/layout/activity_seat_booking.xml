@@ -163,7 +163,7 @@
             app:tabTextColor="@drawable/tab_text_color"
             style="@style/TextViewStyle"
             app:tabSelectedTextColor="@color/colorAccent"
-            app:tabTextAppearance="@style/TabLayoutTextStyle"
+            app:tabTextAppearance="@style/TabLayoutTextStyleChild"
             app:tabIndicator="@drawable/ic_minus_line"
             app:tabIndicatorFullWidth="false"
             android:id="@+id/tabLayout"

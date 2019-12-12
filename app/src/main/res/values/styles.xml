@@ -12,15 +12,16 @@
         <item name="android:fontFamily">@font/brandon_reg</item>
     </style>
 
-    <style name="TabLayoutTextStyle" >
+
+    <style name="TabLayoutTextStyleChild" >
         <item name="android:fontFamily">@font/brandon_reg</item>
-        <item name="android:textSize">28sp</item>
+        <item name="android:textSize">14sp</item>
         <item name="android:textAllCaps">false</item>
     </style>
 
     <style name="TabLayoutTextStyleHeader" >
         <item name="android:fontFamily">@font/brandon_med</item>
-        <item name="android:textSize">28sp</item>
+        <item name="android:textSize">20sp</item>
         <item name="android:textAllCaps">false</item>
     </style>
 
